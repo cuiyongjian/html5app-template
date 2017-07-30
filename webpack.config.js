@@ -32,6 +32,24 @@ module.exports = {
     module: {
         rules: [
             {
+                test:/\.(jpg|png|gif)$/,
+                use:{
+                    loader:'url-loader',
+                    options: {
+                        limit: 8192
+                  }
+                }
+            },
+            {
+                test:/\.(woff|woff2|eot|ttf|svg)$/,
+                use:{
+                    loader:'url-loader',
+                    options: {
+                        limit: 100000
+                  }
+                }
+            },
+            {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader', // 回退选项，抽不出来就弄到js bundle里
