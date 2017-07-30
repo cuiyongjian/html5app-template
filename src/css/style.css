@@ -1,0 +1,12 @@
+body {
+    background: red;
+    display: flex;
+}
+
+body #root {
+    background: green;
+}
+
+#root:hover {
+    background: blue;
+}
